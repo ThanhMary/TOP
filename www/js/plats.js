@@ -50,7 +50,7 @@ const fetchLocal = (url) => {
 };
 
 const fetchApiMangas = () => {
-  fetchLocal("api/mangas.json").then((response) =>
+  fetchLocal("api/plats.json").then((response) =>
     response.json().then(fetchApiDone)
   );
 };
