@@ -89,20 +89,34 @@
       
         <link rel="stylesheet" href="css/index.css">
         <title>TOP</title>
-
-       
     </head>
-    <body>
-   
+<body>
+<div class="container">
+    <center>
+    <div class="row">
+        <div class="col">
         <h1>TOP DISH </h1>
-
-		<div class="hidden page"id="page1"><a href="#">Top1</a></div>
+        <img src="img/plat144x144.png"/>
+        </div>
+        <br>
+        <hr>
+        <div class="col">
+            
+             <button class="btn btn-info" id="prevPage">Page précédente</button>
+            <button class="btn btn-info"  id="nextPage">Page suivante</button>
+        </div>
+    </div>
+    <div class="row">
+       <div class="hidden page"id="page1"><a href="top1.html">Top1</a> </div> 
         <div class="hidden page"id="page2"><a href="#">Top2</a></div>
         <div class="hidden page"id="page3"><a href="#">Top3</a></div>
-
-        <script src="cordova.js"></script>
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/index.js"></script>
-        <script src="js/page.js"></script>
-    </body>
+    </div>
+  
+    <button class="btn btn-outline-success">Add top</button>
+    </center>
+    <script src="cordova.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/page.js"></script>
+</body>
 </html>
