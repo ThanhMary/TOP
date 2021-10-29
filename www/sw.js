@@ -1,6 +1,6 @@
 /** VARS */
 const ORIGIN_URL = `${location.protocol}//${location.host}`;
-const CACHE_NAME = "offline-v3";
+const CACHE_NAME = "offline-v5";
 const OFFLINE_URL = "offline.html";
 const CACHED_FILES = [
   OFFLINE_URL,
@@ -8,7 +8,9 @@ const CACHED_FILES = [
   "https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js",
   `${ORIGIN_URL}/css/index.css`,
   `${ORIGIN_URL}/js/index.js`,
-  `${ORIGIN_URL}/img/logo.png`,
+  `${ORIGIN_URL}/img/plat50x50.png`,
+  `${ORIGIN_URL}/img/plat144x144.png`,
+  `${ORIGIN_URL}/js/jquery-3.6.0.min.js`,
 ];
 /** FUNCTIONS */
 

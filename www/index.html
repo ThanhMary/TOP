@@ -19,6 +19,34 @@
 -->
 <html>
     <head>
+        <link rel="manifest" href="manifest.json" />
+        <script>
+          window.addEventListener("load", () => {
+            if ("cordova" in window) {
+            } else {
+              if ("serviceWorker" in navigator) {
+                navigator.serviceWorker
+                  .register("sw.js", { scope: "./" })
+                  .then(function (reg) {});
+              }
+              var OneSignal = window.OneSignal || [];
+              var initConfig = {
+                appId: "e1175db9-a0e7-4f4a-85ee-2d7eb49a0618",
+                notifyButton: {
+                  enable: true,
+                },
+              };
+              OneSignal.push(function () {
+                OneSignal.SERVICE_WORKER_PARAM = { scope: "push/onesignal/" };
+                OneSignal.SERVICE_WORKER_PATH =
+                  "push/onesignal/OneSignalSDKWorker.js";
+                OneSignal.SERVICE_WORKER_UPDATER_PATH =
+                  "push/onesignal/OneSignalSDKUpdaterWorker.js";
+                OneSignal.init(initConfig);
+              });
+            }
+          });
+        </script>
         <meta charset="utf-8">
         <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
@@ -29,24 +57,52 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <!-- <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
+        <meta name="color-scheme" content="light dark"> -->
+   
+      
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta
+          name="viewport"
+          content="initial-scale=1, width=device-width, viewport-fit=cover"
+        />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+          async=""
+        ></script>
+      
         <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
+        <title>TOP</title>
+
+       
     </head>
     <body>
-        <div class="app">
-            <h1>Mon App Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div> 
-        <h1>BONJOUR </h1>
+   
+        <h1>TOP DISH </h1>
+
+		<div class="hidden page"id="page1"><a href="#">Top1</a></div>
+        <div class="hidden page"id="page2"><a href="#">Top2</a></div>
+        <div class="hidden page"id="page3"><a href="#">Top3</a></div>
+
         <script src="cordova.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/page.js"></script>
     </body>
 </html>
