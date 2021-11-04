@@ -25,5 +25,23 @@ function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+    
+    document.addEventListener("offline", onOffline, false);
+    if (cordova.platformId == 'android') {
+        StatusBar.backgroundColorByHexString("#ff5511");
+    }
+}
+
+
+function onBatteryStatus(status) {
+    alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
+}
+
+
+function onOffline() {
+    navigator.notification.confirm(
+        'Bonjour, desolee! Vous etes en mode offline',  // message
+        'TOP DISH OFFLINE',            // title
+        'OK'                  // buttonName
+    );
 }
